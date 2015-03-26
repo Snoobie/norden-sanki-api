@@ -1,9 +1,10 @@
 class CreateVideos < ActiveRecord::Migration
   def change
     create_table :videos do |t|
-      t.string :title
-      t.string :path
-      t.integer :id_user
+      t.string :filename
+      t.string :content_type
+      t.binary :data
+      t.integer :user_id
       t.text :description
 
       t.timestamps null: false
