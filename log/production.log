@@ -1,0 +1,105 @@
+W, [2015-03-26T11:37:16.813141 #30980]  WARN -- : WARNING on line 20, column 11 of /home/snoobie/.rvm/gems/ruby-2.2.0/gems/upmin-0.0.343/app/assets/stylesheets/upmin/base.css.scss:
+You probably don't mean to use the color value `yellow' in interpolation here.
+It may end up represented as #ffff00, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "yellow").
+If you really want to use the color value here, use `"" + $name'.
+
+
+W, [2015-03-26T11:37:16.813748 #30980]  WARN -- : WARNING on line 20, column 11 of /home/snoobie/.rvm/gems/ruby-2.2.0/gems/upmin-0.0.343/app/assets/stylesheets/upmin/base.css.scss:
+You probably don't mean to use the color value `orange' in interpolation here.
+It may end up represented as #ffa500, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "orange").
+If you really want to use the color value here, use `"" + $name'.
+
+
+W, [2015-03-26T11:37:16.820751 #30980]  WARN -- : WARNING on line 20, column 11 of /home/snoobie/.rvm/gems/ruby-2.2.0/gems/upmin-0.0.343/app/assets/stylesheets/upmin/base.css.scss:
+You probably don't mean to use the color value `red' in interpolation here.
+It may end up represented as #ff0000, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "red").
+If you really want to use the color value here, use `"" + $name'.
+
+
+W, [2015-03-26T11:37:16.830558 #30980]  WARN -- : WARNING on line 20, column 11 of /home/snoobie/.rvm/gems/ruby-2.2.0/gems/upmin-0.0.343/app/assets/stylesheets/upmin/base.css.scss:
+You probably don't mean to use the color value `purple' in interpolation here.
+It may end up represented as #800080, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "purple").
+If you really want to use the color value here, use `"" + $name'.
+
+
+W, [2015-03-26T11:37:16.843285 #30980]  WARN -- : WARNING on line 20, column 11 of /home/snoobie/.rvm/gems/ruby-2.2.0/gems/upmin-0.0.343/app/assets/stylesheets/upmin/base.css.scss:
+You probably don't mean to use the color value `green' in interpolation here.
+It may end up represented as #008000, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "green").
+If you really want to use the color value here, use `"" + $name'.
+
+
+W, [2015-03-26T11:37:16.915957 #30980]  WARN -- : WARNING on line 14, column 7 of /home/snoobie/.rvm/gems/ruby-2.2.0/gems/upmin-0.0.343/app/assets/stylesheets/upmin/instances.css.scss:
+You probably don't mean to use the color value `yellow' in interpolation here.
+It may end up represented as #ffff00, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "yellow").
+If you really want to use the color value here, use `"" + $name'.
+
+
+W, [2015-03-26T11:37:16.920772 #30980]  WARN -- : WARNING on line 14, column 7 of /home/snoobie/.rvm/gems/ruby-2.2.0/gems/upmin-0.0.343/app/assets/stylesheets/upmin/instances.css.scss:
+You probably don't mean to use the color value `orange' in interpolation here.
+It may end up represented as #ffa500, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "orange").
+If you really want to use the color value here, use `"" + $name'.
+
+
+W, [2015-03-26T11:37:16.921435 #30980]  WARN -- : WARNING on line 14, column 7 of /home/snoobie/.rvm/gems/ruby-2.2.0/gems/upmin-0.0.343/app/assets/stylesheets/upmin/instances.css.scss:
+You probably don't mean to use the color value `red' in interpolation here.
+It may end up represented as #ff0000, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "red").
+If you really want to use the color value here, use `"" + $name'.
+
+
+W, [2015-03-26T11:37:16.922285 #30980]  WARN -- : WARNING on line 14, column 7 of /home/snoobie/.rvm/gems/ruby-2.2.0/gems/upmin-0.0.343/app/assets/stylesheets/upmin/instances.css.scss:
+You probably don't mean to use the color value `purple' in interpolation here.
+It may end up represented as #800080, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "purple").
+If you really want to use the color value here, use `"" + $name'.
+
+
+W, [2015-03-26T11:37:16.925446 #30980]  WARN -- : WARNING on line 14, column 7 of /home/snoobie/.rvm/gems/ruby-2.2.0/gems/upmin-0.0.343/app/assets/stylesheets/upmin/instances.css.scss:
+You probably don't mean to use the color value `green' in interpolation here.
+It may end up represented as #008000, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "green").
+If you really want to use the color value here, use `"" + $name'.
+
+
+W, [2015-03-26T11:37:16.927992 #30980]  WARN -- : WARNING on line 85, column 9 of /home/snoobie/.rvm/gems/ruby-2.2.0/gems/upmin-0.0.343/app/assets/stylesheets/upmin/instances.css.scss:
+You probably don't mean to use the color value `yellow' in interpolation here.
+It may end up represented as #ffff00, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "yellow").
+If you really want to use the color value here, use `"" + $name'.
+
+
+W, [2015-03-26T11:37:16.928293 #30980]  WARN -- : WARNING on line 85, column 9 of /home/snoobie/.rvm/gems/ruby-2.2.0/gems/upmin-0.0.343/app/assets/stylesheets/upmin/instances.css.scss:
+You probably don't mean to use the color value `orange' in interpolation here.
+It may end up represented as #ffa500, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "orange").
+If you really want to use the color value here, use `"" + $name'.
+
+
+W, [2015-03-26T11:37:16.929656 #30980]  WARN -- : WARNING on line 85, column 9 of /home/snoobie/.rvm/gems/ruby-2.2.0/gems/upmin-0.0.343/app/assets/stylesheets/upmin/instances.css.scss:
+You probably don't mean to use the color value `red' in interpolation here.
+It may end up represented as #ff0000, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "red").
+If you really want to use the color value here, use `"" + $name'.
+
+
+W, [2015-03-26T11:37:16.930157 #30980]  WARN -- : WARNING on line 85, column 9 of /home/snoobie/.rvm/gems/ruby-2.2.0/gems/upmin-0.0.343/app/assets/stylesheets/upmin/instances.css.scss:
+You probably don't mean to use the color value `purple' in interpolation here.
+It may end up represented as #800080, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "purple").
+If you really want to use the color value here, use `"" + $name'.
+
+
+W, [2015-03-26T11:37:16.931563 #30980]  WARN -- : WARNING on line 85, column 9 of /home/snoobie/.rvm/gems/ruby-2.2.0/gems/upmin-0.0.343/app/assets/stylesheets/upmin/instances.css.scss:
+You probably don't mean to use the color value `green' in interpolation here.
+It may end up represented as #008000, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "green").
+If you really want to use the color value here, use `"" + $name'.
+
+
