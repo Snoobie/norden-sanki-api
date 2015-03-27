@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
-  respond_to :json
+  skip_before_filter :verify_authenticity_token,
+                     :if => Proc.new { |c| c.request.format == 'application/json' }
   require 'fileutils'
 
   # Show all pictures
@@ -9,7 +10,7 @@ class PicturesController < ApplicationController
       render json: @pictures, status: 200, method: :get
   end
 
-  # Get a sport
+  # Get a picture
   # GET /picture?id=1
   def show
       pattern = {id: true}
@@ -24,7 +25,7 @@ class PicturesController < ApplicationController
   # Create a picture
   # POST /picture/create
   def create
-    pattern = {attachment:true, name:true, user_id:true, description: false}
+    pattern = {attachment: true, name: true, user_id: true, description: false}
     if safe_params = valid_params(pattern, params)
       picture = Picture.new(:attachment => params[:attachment], :name => params[:name], :user_id => params[:user_id], :description => params[:description])
       if picture.save
@@ -40,7 +41,7 @@ class PicturesController < ApplicationController
   # Update a sport
   # PUT /sport/update
   def update
-    pattern = {id: true, name: false, description: false}
+    pattern = {id: true, name: false, description: false, user_id: false, attachment: false}
 
     if safe_params = valid_params(pattern, params)
         if picture = valid_object(Picture, safe_params[:id])
