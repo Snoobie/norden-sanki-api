@@ -200,3 +200,1128 @@ Processing by SessionsController#create as HTML
   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "cpsnoobie@gmail.com"]]
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "cpsnoobie@gmail.com"]]
 Completed 200 OK in 292ms (Views: 0.3ms | ActiveRecord: 1.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePictures (20150326232034)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "pictures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "attachment" varchar, "user_id" integer, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150326232034"]]
+  [1m[36m (7.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started POST "/video/create" for 127.0.0.1 at 2015-03-27 09:04:04 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [POST] "/video/create"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (11.2ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (14.8ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (26.7ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (168.6ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x91e9e30 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x91e9cdc @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x91e8094 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/picture/create" for 127.0.0.1 at 2015-03-27 09:04:33 -0600
+
+ActionController::RoutingError (No route matches [POST] "/picture/create"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.6ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (16.1ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (111.5ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x91e9e30 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x91e9cdc @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x91e8094 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures/create" for 127.0.0.1 at 2015-03-27 09:04:46 -0600
+
+ActionController::RoutingError (No route matches [POST] "/pictures/create"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.2ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (161.4ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x91e9e30 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x91e9cdc @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x91e8094 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 09:05:14 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"upload"=>#<ActionDispatch::Http::UploadedFile:0xb55470f8 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-1di25xg.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"upload\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Completed 400 Bad Request in 11ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: picture):
+  app/controllers/pictures_controller.rb:28:in `picture_params'
+  app/controllers/pictures_controller.rb:11:in `create'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.7ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.8ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.3ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x91e9e30 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x91e9cdc @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x91e8094 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 09:16:13 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"upload"=>#<ActionDispatch::Http::UploadedFile:0xb52943d8 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-1b5950q.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"upload\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"toto", "attachment"=>#<ActionDispatch::Http::UploadedFile:0xb5294374 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-azadoy.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: picture):
+  app/controllers/pictures_controller.rb:28:in `picture_params'
+  app/controllers/pictures_controller.rb:11:in `create'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (19.6ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (78.8ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x91e9e30 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x91e9cdc @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x91e8094 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures/create" for 127.0.0.1 at 2015-03-27 09:18:05 -0600
+
+ActionController::RoutingError (No route matches [POST] "/pictures/create"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (13.0ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.2ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (14.2ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.3ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (121.7ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x91e9e30 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x91e9cdc @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x91e8094 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures/new" for 127.0.0.1 at 2015-03-27 09:18:28 -0600
+
+ActionController::RoutingError (No route matches [POST] "/pictures/new"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.1ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.0ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (17.7ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (134.3ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x91e9e30 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x91e9cdc @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x91e8094 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started GET "/pictures/new" for 127.0.0.1 at 2015-03-27 09:18:52 -0600
+Processing by PicturesController#new as */*
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 0.4ms)
+
+ActionView::MissingTemplate (Missing template pictures/new, application/new with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :haml, :jbuilder]}. Searched in:
+  * "/home/snoobie/projet/norden-sanki-api/app/views"
+  * "/home/snoobie/.rvm/gems/ruby-2.2.0/gems/upmin-0.0.343/app/views"
+  * "/home/snoobie/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views"
+):
+  actionview (4.2.1) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.1) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.1) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.1) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_process_action_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.0) lib/rack/etag.rb:24:in `call'
+  rack (1.6.0) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.0) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (37.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (57.0ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (121.7ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 09:31:39 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"upload"=>#<ActionDispatch::Http::UploadedFile:0x918fd2c @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-1ie5rej.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"upload\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"toto", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x918fca0 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-c025bp.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "picture"=>#<ActionDispatch::Http::UploadedFile:0x918fc50 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-mu4kc3.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `permit' for #<ActionDispatch::Http::UploadedFile:0x918fc50>):
+  app/controllers/pictures_controller.rb:28:in `picture_params'
+  app/controllers/pictures_controller.rb:11:in `create'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.0ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.2ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.3ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.1ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x91e9e30 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x91e9cdc @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x91e8094 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 09:33:25 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0xb5736c10 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-1q7x4r5.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.5ms)
+
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  app/controllers/pictures_controller.rb:11:in `create'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.0ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.2ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x91e9e30 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x91e9cdc @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x91e8094 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 09:34:20 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x946e084 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-1b8dlkc.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `permit' for #<ActionDispatch::Http::UploadedFile:0x946e084>):
+  app/controllers/pictures_controller.rb:28:in `picture_params'
+  app/controllers/pictures_controller.rb:11:in `create'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.6ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x91e9e30 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x91e9cdc @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x91e8094 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 09:38:26 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0xb5688084 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-wbk63l.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.4ms)
+
+ActiveRecord::UnknownAttributeError (unknown attribute 'file' for Picture.):
+  app/controllers/pictures_controller.rb:13:in `create'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.2ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x91e9e30 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x91e9cdc @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x91e8094 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 09:39:02 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0xb501295c @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-1yx8j1l.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 0.8ms)
+
+ActionView::MissingTemplate (Missing template pictures/new, application/new with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :haml, :jbuilder]}. Searched in:
+  * "/home/snoobie/projet/norden-sanki-api/app/views"
+  * "/home/snoobie/.rvm/gems/ruby-2.2.0/gems/upmin-0.0.343/app/views"
+  * "/home/snoobie/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views"
+):
+  app/controllers/pictures_controller.rb:20:in `create'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.7ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (45.1ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x91e9e30 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x91e9cdc @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x91e8094 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 09:39:33 -0600
+Processing by PicturesController#create as */*
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 400 Bad Request in 57ms (Views: 2.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 09:39:41 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"name"=>#<ActionDispatch::Http::UploadedFile:0x9f3df8c @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-30qtdk.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"name\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 400 Bad Request in 22ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 09:39:52 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"name"=>"rayban"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 400 Bad Request in 4ms (Views: 0.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 09:39:56 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0x94be55c @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-1v23fs7.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"rayban"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 400 Bad Request in 45ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 09:39:57 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0x924cb0c @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-unssy5.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"rayban"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 400 Bad Request in 9ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 09:40:16 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0xb53e2618 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-1q8fn7j.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"rayban"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (6.5ms)[0m  [1mINSERT INTO "pictures" ("attachment", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["attachment", "ray-ban.jpg"], ["name", "rayban"], ["created_at", "2015-03-27 15:40:16.533494"], ["updated_at", "2015-03-27 15:40:16.533494"]]
+  [1m[35m (20.8ms)[0m  commit transaction
+Completed 201 Created in 105ms (Views: 0.6ms | ActiveRecord: 27.9ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 09:41:27 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0xb514075c @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-hbtjxz.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"rayban", "user_id"=>"12"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pictures" ("attachment", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["attachment", "ray-ban.jpg"], ["name", "rayban"], ["created_at", "2015-03-27 15:41:28.040645"], ["updated_at", "2015-03-27 15:41:28.040645"]]
+  [1m[36m (15.1ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 74ms (Views: 0.5ms | ActiveRecord: 16.2ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 09:47:43 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0xb5b86cac @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-kghf1u.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"rayban"}
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 09:47:54 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0xb5b3bcfc @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-1tlb6im.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"rayban", "user_id"=>"1"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pictures" ("attachment", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["attachment", "ray-ban.jpg"], ["name", "rayban"], ["created_at", "2015-03-27 15:47:54.536313"], ["updated_at", "2015-03-27 15:47:54.536313"]]
+  [1m[35m (10.4ms)[0m  commit transaction
+Completed 201 Created in 61ms (Views: 0.9ms | ActiveRecord: 13.9ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 09:48:46 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0xb59e88a0 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-2p0zns.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"rayban", "user_id"=>"1"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pictures" ("attachment", "name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["attachment", "ray-ban.jpg"], ["name", "rayban"], ["user_id", 1], ["created_at", "2015-03-27 15:48:46.644502"], ["updated_at", "2015-03-27 15:48:46.644502"]]
+  [1m[36m (14.1ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 50ms (Views: 0.6ms | ActiveRecord: 25.1ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 09:48:57 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0xb5bac704 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-x9fs9p.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"rayban", "user_id"=>"1", "description"=>"best day ever"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pictures" ("attachment", "name", "user_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["attachment", "ray-ban.jpg"], ["name", "rayban"], ["user_id", 1], ["description", "best day ever"], ["created_at", "2015-03-27 15:48:57.389026"], ["updated_at", "2015-03-27 15:48:57.389026"]]
+  [1m[35m (16.5ms)[0m  commit transaction
+Completed 201 Created in 27ms (Views: 0.4ms | ActiveRecord: 16.8ms)
+
+
+Started DELETE "/pictures/" for 127.0.0.1 at 2015-03-27 09:50:32 -0600
+
+ActionController::RoutingError (No route matches [DELETE] "/pictures"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (140.0ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x91e9e30 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x91e9cdc @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x91e8094 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started DELETE "/pictures/5" for 127.0.0.1 at 2015-03-27 09:50:47 -0600
+Processing by PicturesController#destroy as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mPicture Load (0.2ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mSQL (16.9ms)[0m  DELETE FROM "pictures" WHERE "pictures"."id" = ?  [["id", 5]]
+Completed 200 OK in 40ms (Views: 2.2ms | ActiveRecord: 17.1ms)
+
+
+Started DELETE "/pictures/5" for 127.0.0.1 at 2015-03-27 09:51:33 -0600
+Processing by PicturesController#destroy as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 400 Bad Request in 21ms (Views: 0.3ms | ActiveRecord: 8.7ms)
+
+
+Started DELETE "/pictures/4" for 127.0.0.1 at 2015-03-27 09:53:50 -0600
+Processing by PicturesController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (4.5ms)[0m  DELETE FROM "pictures" WHERE "pictures"."id" = ?  [["id", 4]]
+  [1m[36m (10.7ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 59ms (Views: 0.9ms | ActiveRecord: 16.7ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 09:54:41 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"name"=>"rayban", "user_id"=>"1", "description"=>"best day ever"}
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 09:54:48 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0xa1ef12c @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-4yspgv.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"rayban", "user_id"=>"1", "description"=>"best day ever"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pictures" ("attachment", "name", "user_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["attachment", "ray-ban.jpg"], ["name", "rayban"], ["user_id", 1], ["description", "best day ever"], ["created_at", "2015-03-27 15:54:48.528243"], ["updated_at", "2015-03-27 15:54:48.528243"]]
+  [1m[35m (13.2ms)[0m  commit transaction
+Completed 201 Created in 34ms (Views: 0.5ms | ActiveRecord: 13.5ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 09:59:29 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0x9391cc4 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-sy6wgt.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"rayban", "user_id"=>"1", "description"=>"best day ever"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pictures" ("attachment", "name", "user_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["attachment", "ray-ban.jpg"], ["name", "rayban"], ["user_id", 1], ["description", "best day ever"], ["created_at", "2015-03-27 15:59:30.037132"], ["updated_at", "2015-03-27 15:59:30.037132"]]
+  [1m[36m (15.8ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 73ms (Views: 0.6ms | ActiveRecord: 16.7ms)
+
+
+Started DELETE "/pictures/6" for 127.0.0.1 at 2015-03-27 09:59:35 -0600
+Processing by PicturesController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[35mPicture Load (0.2ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "pictures" WHERE "pictures"."id" = ?  [["id", 6]]
+  [1m[36m (11.7ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 25ms (Views: 0.8ms | ActiveRecord: 12.2ms)
+
+
+Started DELETE "/pictures/7" for 127.0.0.1 at 2015-03-27 09:59:48 -0600
+Processing by PicturesController#destroy as */*
+  Parameters: {"id"=>"7"}
+  [1m[35mPicture Load (0.6ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "pictures" WHERE "pictures"."id" = ?  [["id", 7]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 62ms (Views: 0.9ms | ActiveRecord: 12.4ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 10:00:37 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"name"=>"rayban", "user_id"=>"1", "description"=>"best day ever"}
+Completed 400 Bad Request in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 10:00:43 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0xb55dc144 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-1x11ow.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"rayban", "user_id"=>"1", "description"=>"best day ever"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pictures" ("attachment", "name", "user_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["attachment", "ray-ban.jpg"], ["name", "rayban"], ["user_id", 1], ["description", "best day ever"], ["created_at", "2015-03-27 16:00:43.299983"], ["updated_at", "2015-03-27 16:00:43.299983"]]
+  [1m[35m (12.3ms)[0m  commit transaction
+Completed 201 Created in 45ms (Views: 0.6ms | ActiveRecord: 20.9ms)
+
+
+Started DELETE "/pictures/8" for 127.0.0.1 at 2015-03-27 10:00:49 -0600
+Processing by PicturesController#destroy as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mPicture Load (0.2ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "pictures" WHERE "pictures"."id" = ?[0m  [["id", 8]]
+  [1m[35m (10.7ms)[0m  commit transaction
+Completed 200 OK in 22ms (Views: 0.6ms | ActiveRecord: 11.2ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 10:03:22 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0xb57c18c4 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-330vr5.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"rayban", "user_id"=>"1", "description"=>"best day ever"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pictures" ("attachment", "name", "user_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["attachment", "ray-ban.jpg"], ["name", "rayban"], ["user_id", 1], ["description", "best day ever"], ["created_at", "2015-03-27 16:03:22.219614"], ["updated_at", "2015-03-27 16:03:22.219614"]]
+  [1m[36m (10.6ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 52ms (Views: 0.4ms | ActiveRecord: 15.6ms)
+
+
+Started DELETE "/pictures/9" for 127.0.0.1 at 2015-03-27 10:03:30 -0600
+Processing by PicturesController#destroy as */*
+  Parameters: {"id"=>"9"}
+  [1m[35mPicture Load (0.2ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "pictures" WHERE "pictures"."id" = ?  [["id", 9]]
+  [1m[36m (12.1ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 25ms (Views: 0.9ms | ActiveRecord: 12.6ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 10:03:58 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0xb586be28 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-x7lgin.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"rayban", "user_id"=>"1", "description"=>"best day ever"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pictures" ("attachment", "name", "user_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["attachment", "ray-ban.jpg"], ["name", "rayban"], ["user_id", 1], ["description", "best day ever"], ["created_at", "2015-03-27 16:03:58.365580"], ["updated_at", "2015-03-27 16:03:58.365580"]]
+  [1m[35m (11.8ms)[0m  commit transaction
+Completed 201 Created in 52ms (Views: 0.6ms | ActiveRecord: 17.8ms)
+
+
+Started DELETE "/pictures/10" for 127.0.0.1 at 2015-03-27 10:04:05 -0600
+Processing by PicturesController#destroy as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mPicture Load (0.3ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "pictures" WHERE "pictures"."id" = ?[0m  [["id", 10]]
+  [1m[35m (12.8ms)[0m  commit transaction
+Completed 200 OK in 23ms (Views: 0.9ms | ActiveRecord: 13.2ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 10:05:16 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0xb117208 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-rum36p.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"rayban", "user_id"=>"1", "description"=>"best day ever"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pictures" ("attachment", "name", "user_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["attachment", "ray-ban.jpg"], ["name", "rayban"], ["user_id", 1], ["description", "best day ever"], ["created_at", "2015-03-27 16:05:16.492234"], ["updated_at", "2015-03-27 16:05:16.492234"]]
+  [1m[36m (13.2ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 57ms (Views: 0.3ms | ActiveRecord: 17.1ms)
+
+
+Started DELETE "/pictures/11" for 127.0.0.1 at 2015-03-27 10:05:22 -0600
+Processing by PicturesController#destroy as */*
+  Parameters: {"id"=>"11"}
+  [1m[35mPicture Load (0.2ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "pictures" WHERE "pictures"."id" = ?  [["id", 11]]
+  [1m[36m (14.9ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 28ms (Views: 0.8ms | ActiveRecord: 15.1ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 10:06:34 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0xaddc19c @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-7lgi4o.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"rayban", "user_id"=>"1", "description"=>"best day ever"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pictures" ("attachment", "name", "user_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["attachment", "ray-ban.jpg"], ["name", "rayban"], ["user_id", 1], ["description", "best day ever"], ["created_at", "2015-03-27 16:06:34.373088"], ["updated_at", "2015-03-27 16:06:34.373088"]]
+  [1m[35m (18.1ms)[0m  commit transaction
+Completed 201 Created in 67ms (Views: 0.7ms | ActiveRecord: 19.1ms)
+
+
+Started DELETE "/pictures/12" for 127.0.0.1 at 2015-03-27 10:06:39 -0600
+Processing by PicturesController#destroy as */*
+  Parameters: {"id"=>"12"}
+  [1m[36mPicture Load (0.4ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "pictures" WHERE "pictures"."id" = ?[0m  [["id", 12]]
+  [1m[35m (23.1ms)[0m  commit transaction
+Completed 200 OK in 33ms (Views: 1.4ms | ActiveRecord: 23.7ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-03-27 10:07:25 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0xa24c3e0 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-nqf84.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"rayban", "user_id"=>"1", "description"=>"best day ever"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pictures" ("attachment", "name", "user_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["attachment", "ray-ban.jpg"], ["name", "rayban"], ["user_id", 1], ["description", "best day ever"], ["created_at", "2015-03-27 16:07:25.281020"], ["updated_at", "2015-03-27 16:07:25.281020"]]
+  [1m[36m (15.0ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 48ms (Views: 0.3ms | ActiveRecord: 15.9ms)
+
+
+Started DELETE "/pictures/13" for 127.0.0.1 at 2015-03-27 10:07:28 -0600
+Processing by PicturesController#destroy as */*
+  Parameters: {"id"=>"13"}
+  [1m[35mPicture Load (0.2ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  DELETE FROM "pictures" WHERE "pictures"."id" = ?  [["id", 13]]
+  [1m[36m (11.7ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 21ms (Views: 0.8ms | ActiveRecord: 14.6ms)
+
+
+Started POST "/picture/create" for 127.0.0.1 at 2015-03-27 10:20:17 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0x8ae5e7c @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-1ngvipz.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"rayban", "user_id"=>"1", "description"=>"best day ever"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pictures" ("attachment", "name", "user_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["attachment", "ray-ban.jpg"], ["name", "rayban"], ["user_id", 1], ["description", "best day ever"], ["created_at", "2015-03-27 16:20:17.747997"], ["updated_at", "2015-03-27 16:20:17.747997"]]
+  [1m[35m (9.0ms)[0m  commit transaction
+Completed 201 Created in 37ms (Views: 0.6ms | ActiveRecord: 13.8ms)
+
+
+Started DELETE "/picture/delete" for 127.0.0.1 at 2015-03-27 10:20:36 -0600
+
+AbstractController::ActionNotFound (The action 'delete' could not be found for PicturesController):
+  actionpack (4.2.1) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.0) lib/rack/etag.rb:24:in `call'
+  rack (1.6.0) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.0) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.5ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x91e9e30 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x91e9cdc @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x91e8094 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started DELETE "/picture/delete/14" for 127.0.0.1 at 2015-03-27 10:21:01 -0600
+
+ActionController::RoutingError (No route matches [DELETE] "/picture/delete/14"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.0ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.4ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (150.6ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x91e9e30 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x91e9cdc @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x91e8094 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started DELETE "/picture/delete" for 127.0.0.1 at 2015-03-27 10:21:32 -0600
+
+AbstractController::ActionNotFound (The action 'delete' could not be found for PicturesController):
+  actionpack (4.2.1) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.0) lib/rack/etag.rb:24:in `call'
+  rack (1.6.0) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.0) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.4ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x91e9e30 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x91e9cdc @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x91e8094 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started DELETE "/picture/delete" for 127.0.0.1 at 2015-03-27 10:21:58 -0600
+Processing by PicturesController#delete as */*
+  Parameters: {"id"=>"14"}
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT 1[0m  [["id", 14]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "pictures" WHERE "pictures"."id" = ?[0m  [["id", 14]]
+  [1m[35m (12.3ms)[0m  commit transaction
+Completed 200 OK in 40ms (Views: 0.8ms | ActiveRecord: 13.5ms)
+
+
+Started POST "/picture/create" for 127.0.0.1 at 2015-03-27 10:22:14 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0xb167b04 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-n9bjyg.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"rayban", "user_id"=>"1", "description"=>"best day ever"}
+  [1m[36m (2.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pictures" ("attachment", "name", "user_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["attachment", "ray-ban.jpg"], ["name", "rayban"], ["user_id", 1], ["description", "best day ever"], ["created_at", "2015-03-27 16:22:14.907213"], ["updated_at", "2015-03-27 16:22:14.907213"]]
+  [1m[36m (12.2ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 25ms (Views: 0.8ms | ActiveRecord: 14.9ms)
+
+
+Started PUT "/picture/update" for 127.0.0.1 at 2015-03-27 10:22:50 -0600
+Processing by PicturesController#update as */*
+  Parameters: {"id"=>"15", "name"=>"toto", "description"=>"Good life"}
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/picture/update" for 127.0.0.1 at 2015-03-27 10:23:08 -0600
+Processing by PicturesController#update as */*
+  Parameters: {"id"=>"15", "name"=>"toto", "description"=>"Good life"}
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT 1  [["id", 15]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "pictures" SET "name" = ?, "description" = ?, "updated_at" = ? WHERE "pictures"."id" = ?  [["name", "toto"], ["description", "Good life"], ["updated_at", "2015-03-27 16:23:09.077433"], ["id", 15]]
+  [1m[36m (10.7ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 45ms (Views: 0.6ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/picture/all" for 127.0.0.1 at 2015-03-27 10:23:27 -0600
+Processing by PicturesController#index as */*
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+NameError (uninitialized constant PicturesController::Sport):
+  app/controllers/pictures_controller.rb:8:in `index'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.0ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (26.2ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (64.6ms)
+
+
+Started GET "/picture/all" for 127.0.0.1 at 2015-03-27 10:23:57 -0600
+Processing by PicturesController#index as */*
+  [1m[35mPicture Load (1.6ms)[0m  SELECT "pictures".* FROM "pictures"
+Completed 200 OK in 27ms (Views: 16.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/picture" for 127.0.0.1 at 2015-03-27 10:24:12 -0600
+Processing by PicturesController#show as */*
+Completed 400 Bad Request in 5ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/picture/15" for 127.0.0.1 at 2015-03-27 10:24:19 -0600
+
+ActionController::RoutingError (No route matches [GET] "/picture/15"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/snoobie/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (25.8ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (147.0ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (4.4ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (57.2ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (94.3ms)
+
+
+Started GET "/picture" for 127.0.0.1 at 2015-03-27 10:24:43 -0600
+Processing by PicturesController#show as */*
+Completed 400 Bad Request in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/picture?id=15" for 127.0.0.1 at 2015-03-27 10:24:56 -0600
+Processing by PicturesController#show as */*
+  Parameters: {"id"=>"15"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NameError (uninitialized constant PicturesController::Sport):
+  app/controllers/pictures_controller.rb:17:in `show'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.9ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.3ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (19.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (42.5ms)
+
+
+Started GET "/picture?id=15" for 127.0.0.1 at 2015-03-27 10:25:23 -0600
+Processing by PicturesController#show as */*
+  Parameters: {"id"=>"15"}
+  [1m[36mPicture Load (0.2ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT 1[0m  [["id", 15]]
+Completed 200 OK in 46ms (Views: 0.8ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/picture/create" for 127.0.0.1 at 2015-03-27 10:31:46 -0600
+Processing by PicturesController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0xb54b994c @tempfile=#<Tempfile:/tmp/RackMultipart20150327-2583-i4f3xa.old>, @original_filename="vmlinuz.old", @content_type="application/x-trash", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"vmlinuz.old\"\r\nContent-Type: application/x-trash\r\n">, "name"=>"rayban", "user_id"=>"1", "description"=>"best day ever"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 400 Bad Request in 35ms (Views: 0.2ms | ActiveRecord: 0.8ms)

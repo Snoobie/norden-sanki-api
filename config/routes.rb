@@ -9,6 +9,13 @@ Rails.application.routes.draw do
   # User routes
   get '/user', to: 'users#show'
 
+  # Picture routes
+  get '/picture/all', to: 'pictures#index'
+  get '/picture', to: 'pictures#show'
+  post '/picture/create', to: 'pictures#create'
+  put '/picture/update', to: 'pictures#update'
+  delete '/picture/delete', to: 'pictures#delete'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
