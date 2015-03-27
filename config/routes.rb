@@ -23,6 +23,13 @@ Rails.application.routes.draw do
   put '/award/update', to: 'awards#update'
   delete '/award/delete', to: 'awards#delete'
 
+  # Blog routes
+  get '/blog/all', to: 'blogs#index'
+  get '/blog', to: 'blogs#show'
+  post '/blog/create', to: 'blogs#create'
+  put '/blog/update', to: 'blogs#update'
+  delete '/blog/delete', to: 'blogs#delete'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
