@@ -16,6 +16,13 @@ Rails.application.routes.draw do
   put '/picture/update', to: 'pictures#update'
   delete '/picture/delete', to: 'pictures#delete'
 
+  # Video routes
+  get '/video/all', to: 'videos#index'
+  get '/video', to: 'videos#show'
+  post '/video/create', to: 'videos#create'
+  put '/video/update', to: 'videos#update'
+  delete '/video/delete', to: 'videos#delete'
+
   # Award routes
   get '/award/all', to: 'awards#index'
   get '/award', to: 'awards#show'

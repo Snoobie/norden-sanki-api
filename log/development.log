@@ -1782,3 +1782,97 @@ Started POST "/challenge/create" for 127.0.0.1 at 2015-03-27 15:38:55 -0600
 Processing by ChallengesController#create as */*
   Parameters: {"id"=>"16"}
 Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVideos (20150330153104)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (6.1ms)[0m  [1mCREATE TABLE "videos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "attachment" varchar, "user_id" integer, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150330153104"]]
+  [1m[36m (14.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started POST "/challenge/create" for 127.0.0.1 at 2015-03-30 09:50:54 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ChallengesController#create as */*
+  Parameters: {"id"=>"16"}
+Completed 400 Bad Request in 24ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/challenge/create" for 127.0.0.1 at 2015-03-30 09:52:22 -0600
+Processing by ChallengesController#create as */*
+  Parameters: {"name"=>"NordenBreakable", "start_date"=>"02/04/2015", "end_date"=>"03/04/2015", "limit_date"=>"02/04/2015"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.9ms)[0m  [1mINSERT INTO "challenges" ("name", "start_date", "end_date", "limit_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "NordenBreakable"], ["start_date", "2015-04-02 00:00:00.000000"], ["end_date", "2015-04-03 00:00:00.000000"], ["limit_date", "2015-04-02 00:00:00.000000"], ["created_at", "2015-03-30 15:52:22.642196"], ["updated_at", "2015-03-30 15:52:22.642196"]]
+  [1m[35m (14.9ms)[0m  commit transaction
+Completed 201 Created in 90ms (Views: 0.3ms | ActiveRecord: 28.3ms)
+
+
+Started POST "/challenge/create" for 127.0.0.1 at 2015-03-30 09:52:59 -0600
+Processing by ChallengesController#create as */*
+  Parameters: {"name"=>"NordenBreakable", "start_date"=>"02/04/2015", "end_date"=>"03/04/2015", "limit_date"=>"02/04/2015"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "challenges" ("name", "start_date", "end_date", "limit_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "NordenBreakable"], ["start_date", "2015-04-02 00:00:00.000000"], ["end_date", "2015-04-03 00:00:00.000000"], ["limit_date", "2015-04-02 00:00:00.000000"], ["created_at", "2015-03-30 15:52:59.621296"], ["updated_at", "2015-03-30 15:52:59.621296"]]
+  [1m[36m (12.1ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 53ms (Views: 0.7ms | ActiveRecord: 12.8ms)
+
+
+Started POST "/challenge/create" for 127.0.0.1 at 2015-03-30 09:53:21 -0600
+Processing by ChallengesController#create as */*
+  Parameters: {"name"=>"NordenBreakable", "start_date"=>"02/04/2015", "end_date"=>"03/04/2015", "limit_date"=>"02/04/2015"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "challenges" ("name", "start_date", "end_date", "limit_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "NordenBreakable"], ["start_date", "2015-04-02 00:00:00.000000"], ["end_date", "2015-04-03 00:00:00.000000"], ["limit_date", "2015-04-02 00:00:00.000000"], ["created_at", "2015-03-30 15:53:21.513759"], ["updated_at", "2015-03-30 15:53:21.513759"]]
+  [1m[35m (12.2ms)[0m  commit transaction
+Completed 201 Created in 64ms (Views: 1.0ms | ActiveRecord: 13.0ms)
+
+
+Started POST "/video/create" for 127.0.0.1 at 2015-03-30 09:55:38 -0600
+Processing by VideosController#create as */*
+  Parameters: {"name"=>"NordenBreakable", "start_date"=>"02/04/2015", "end_date"=>"03/04/2015", "limit_date"=>"02/04/2015"}
+Completed 400 Bad Request in 7ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/video/create" for 127.0.0.1 at 2015-03-30 09:56:30 -0600
+Processing by VideosController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0x8898584 @tempfile=#<Tempfile:/tmp/RackMultipart20150330-2679-1txw9mb.mp4>, @original_filename="Mexico vs Ecuador 1-0 Gol Resumen Partido Amistoso 2015.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"Mexico vs Ecuador 1-0 Gol Resumen Partido Amistoso 2015.mp4\"\r\nContent-Type: video/mp4\r\n">, "user_id"=>"1"}
+Completed 400 Bad Request in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/video/create" for 127.0.0.1 at 2015-03-30 09:56:50 -0600
+Processing by VideosController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0x8ee48c0 @tempfile=#<Tempfile:/tmp/RackMultipart20150330-2679-kit7o0.mp4>, @original_filename="Mexico vs Ecuador 1-0 Gol Resumen Partido Amistoso 2015.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"Mexico vs Ecuador 1-0 Gol Resumen Partido Amistoso 2015.mp4\"\r\nContent-Type: video/mp4\r\n">, "user_id"=>"1", "name"=>"Mexico video"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "videos" ("attachment", "name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["attachment", "Mexico_vs_Ecuador_1-0_Gol_Resumen_Partido_Amistoso_2015.mp4"], ["name", "Mexico video"], ["user_id", 1], ["created_at", "2015-03-30 15:56:50.974869"], ["updated_at", "2015-03-30 15:56:50.974869"]]
+  [1m[36m (8.2ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 92ms (Views: 0.5ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/video/create" for 127.0.0.1 at 2015-03-30 09:57:03 -0600
+Processing by VideosController#create as */*
+  Parameters: {"attachment"=>#<ActionDispatch::Http::UploadedFile:0x9ef07c8 @tempfile=#<Tempfile:/tmp/RackMultipart20150330-2679-1eka07u.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "user_id"=>"1", "name"=>"Mexico video"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 400 Bad Request in 82ms (Views: 0.2ms | ActiveRecord: 0.1ms)
