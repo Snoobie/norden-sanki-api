@@ -4,4 +4,6 @@ class Picture < ActiveRecord::Base
   belongs_to :users
   belongs_to :blogs
   belongs_to :awards
+  belongs_to :distributors
+  belongs_to :challenges
 end

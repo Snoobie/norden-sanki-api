@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  start_date: 2015-03-27 15:30:42
+  end_date: 2015-03-27 15:30:42
+  limit_date: 2015-03-27 15:30:42
+  award_id: 1
+  description: MyText
+  picture_id: 1
+  product_id: 1
+
+two:
+  name: MyString
+  start_date: 2015-03-27 15:30:42
+  end_date: 2015-03-27 15:30:42
+  limit_date: 2015-03-27 15:30:42
+  award_id: 1
+  description: MyText
+  picture_id: 1
+  product_id: 1

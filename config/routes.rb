@@ -30,6 +30,20 @@ Rails.application.routes.draw do
   put '/blog/update', to: 'blogs#update'
   delete '/blog/delete', to: 'blogs#delete'
 
+  # Distributor routes
+  get '/distributor/all', to: 'distributors#index'
+  get '/distributor', to: 'distributors#show'
+  post '/distributor/create', to: 'distributors#create'
+  put '/distributor/update', to: 'distributors#update'
+  delete '/distributor/delete', to: 'distributors#delete'
+
+  # Challenge routes
+  get '/challenge/all', to: 'challenges#index'
+  get '/challenge', to: 'challenges#show'
+  post '/challenge/create', to: 'challenges#create'
+  put '/challenge/update', to: 'challenges#update'
+  delete '/challenge/delete', to: 'challenges#delete'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
