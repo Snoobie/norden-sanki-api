@@ -1,6 +1,5 @@
 class DistributorsController < ApplicationController
-  skip_before_filter :verify_authenticity_token,
-                     :if => Proc.new { |c| c.request.format == 'application/json' }
+  acts_as_token_authentication_handler_for User
 
   # Show all distributors
   # GET /distributor/all
@@ -23,10 +22,10 @@ class DistributorsController < ApplicationController
   # Create an distributor
   # POST /distributor/create
   def create
-    pattern = {name:true, city:true, state:true, address:true, latitude:true, longitude:true, phone:false, email:false, website:false, schedule:false, picture_id:false}
+    pattern = {user_email:true, user_token:true, name:true, city:true, state:true, address:true, latitud:true, longitude:true, phone:false, email:false, website:false, schedule:false, picture_id:false}
     if safe_params = valid_params(pattern, params)
-      if distributor = valid_request(Distributor.new, safe_params)
-          render json: distributor, status: 201, method: :post
+      if distributor = valid_request(Distributor.new, safe_params.except(:user_email, :user_token))
+        render json: distributor, status: 201, method: :post
       end
     end
   end
