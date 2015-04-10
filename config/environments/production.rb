@@ -13,7 +13,7 @@ Rails.application.configure do
     :port           => '587',
     :authentication => :plain,
     :user_name      => 'snoobie',
-    :password       => 'noobie7878',
+    :password       => 'Norden2015!',
     :domain         => 'heroku.com'
   }
   ActionMailer::Base.delivery_method = :smtp
