@@ -15,6 +15,7 @@ Rails.application.configure do
       :user_name      => 'snoobie',
       :password       => 'noobie7878',
       :domain         => 'heroku.com',
+      :host           => 'sanki-api.herokuapp.com',
       :enable_starttls_auto => true
     }
 

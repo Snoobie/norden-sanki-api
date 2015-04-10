@@ -5006,3 +5006,12 @@ Content-Transfer-Encoding: 7bit
 
   [1m[35m (5.4ms)[0m  commit transaction
 Completed 201 Created in 540ms (Views: 0.4ms | ActiveRecord: 14.6ms)
+
+
+Started POST "/user/sign_up" for 127.0.0.1 at 2015-04-10 12:57:15 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"email"=>"fouck@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'fouck@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 400 Bad Request in 277ms (Views: 0.2ms | ActiveRecord: 0.3ms)
