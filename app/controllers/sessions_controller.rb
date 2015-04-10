@@ -6,12 +6,15 @@ class SessionsController < Devise::SessionsController
     password = params[:password] || params[:user][:password]
 
     id = User.find_by(email: email).try(:id) if email.presence
-
     if email.nil? or password.nil?
       render status: 400, json: { message: 'The request MUST contain the user email and password.' }
       return
     end
 
+    if !User.find(id).confirmed?
+      render status: 400, json: { message: 'You need to verify your email' }
+      return
+    end
     # Authentication
     user = User.find_by(email: email)
     if user

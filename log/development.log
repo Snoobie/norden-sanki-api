@@ -5015,3 +5015,176 @@ Processing by RegistrationsController#create as */*
   [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'fouck@gmail.com' LIMIT 1
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
 Completed 400 Bad Request in 277ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/user/sign_up" for 127.0.0.1 at 2015-04-10 15:36:40 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"email"=>"fouck@gmail.com", "password"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'fouck@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 400 Bad Request in 204ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/user/sign_up" for 127.0.0.1 at 2015-04-10 15:36:53 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"email"=>"toto@yopmail.com", "password"=>"[FILTERED]"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'toto@yopmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."authentication_token" = ?[0m  [["authentication_token", "jLx2bDshpJrfnts-SWuY"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["confirmation_token", "973e6e56014dee24c18fe25a48473944697ce1dd4a4a4346386f57fd1744bfa2"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "authentication_token", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "toto@yopmail.com"], ["encrypted_password", "$2a$10$C0xbJkvGlfjW8rsvBZpAi.krkP4oRqvX1nC9hxTEcUhbcJJceqlj6"], ["authentication_token", "jLx2bDshpJrfnts-SWuY"], ["created_at", "2015-04-10 20:36:54.131128"], ["updated_at", "2015-04-10 20:36:54.131128"], ["confirmation_token", "973e6e56014dee24c18fe25a48473944697ce1dd4a4a4346386f57fd1744bfa2"], ["confirmation_sent_at", "2015-04-10 20:36:54.133091"]]
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/mailer/confirmation_instructions.html.erb (0.3ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 33.6ms
+
+Sent mail to toto@yopmail.com (9.2ms)
+Date: Fri, 10 Apr 2015 15:36:54 -0500
+From: no-reply@sanki.com
+Reply-To: no-reply@sanki.com
+To: toto@yopmail.com
+Message-ID: <552834662c3d2_3a904516ce824875@snoobie-VirtualBox.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome toto@yopmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=NRsY4Ezi5RnT9kmsYyGg">Confirm my account</a></p>
+
+  [1m[35m (12.9ms)[0m  commit transaction
+Completed 201 Created in 382ms (Views: 0.4ms | ActiveRecord: 13.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-04-10 15:37:15 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"toto@yopmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "toto@yopmail.com"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "toto@yopmail.com"]]
+Completed 500 Internal Server Error in 288ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/sessions_controller.rb:21:in `create'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.9ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (33.9ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x9b2fa44 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x9b2f878 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x9b2dac8 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-04-10 15:37:37 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"toto@yopmail.com", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "toto@yopmail.com"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Completed 200 OK in 39ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/confirmation?confirmation_token=NRsY4Ezi5RnT9kmsYyGg" for 127.0.0.1 at 2015-04-10 15:38:28 -0500
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"NRsY4Ezi5RnT9kmsYyGg"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["confirmation_token", "973e6e56014dee24c18fe25a48473944697ce1dd4a4a4346386f57fd1744bfa2"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "confirmation_token" = ?, "confirmed_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["confirmation_token", nil], ["confirmed_at", "2015-04-10 20:38:28.040908"], ["updated_at", "2015-04-10 20:38:28.041501"], ["id", 6]]
+  [1m[36m (17.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 30ms (ActiveRecord: 17.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-04-10 15:38:28 -0500
+Processing by SessionsController#new as HTML
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 203ms (Views: 197.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-04-10 15:38:34 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"toto@yopmail.com", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "toto@yopmail.com"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-04-10 15:39:51 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"toto@yopmail.com", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "toto@yopmail.com"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 2.3ms)
+
+NoMethodError (undefined method `confirmed' for #<User:0xacc3f80>):
+  app/controllers/sessions_controller.rb:14:in `create'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.6ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x9b2fa44 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x9b2f878 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x9b2dac8 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-04-10 15:40:03 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"toto@yopmail.com", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "toto@yopmail.com"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Completed 400 Bad Request in 38ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-04-10 15:40:14 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"toto@yopmail.com", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "toto@yopmail.com"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "toto@yopmail.com"]]
+Completed 200 OK in 180ms (Views: 0.8ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/user/sign_up" for 127.0.0.1 at 2015-04-10 15:40:28 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"email"=>"titi@yopmail.com", "password"=>"[FILTERED]"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'titi@yopmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."authentication_token" = ?[0m  [["authentication_token", "KmVYTx44FB9k3KwzBzwh"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["confirmation_token", "81bf064b509766db16ab68ba83f2bf31db0bf2e8924e53e31e1c02f4ad560ea6"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "authentication_token", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "titi@yopmail.com"], ["encrypted_password", "$2a$10$tJQGLO9GC/0vb1v4zJ/Wn.wGKzbx5KYhP5Vm.0jzOsJRYd3GuNvXy"], ["authentication_token", "KmVYTx44FB9k3KwzBzwh"], ["created_at", "2015-04-10 20:40:28.713024"], ["updated_at", "2015-04-10 20:40:28.713024"], ["confirmation_token", "81bf064b509766db16ab68ba83f2bf31db0bf2e8924e53e31e1c02f4ad560ea6"], ["confirmation_sent_at", "2015-04-10 20:40:28.714043"]]
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/mailer/confirmation_instructions.html.erb (0.3ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 28.7ms
+
+Sent mail to titi@yopmail.com (14.3ms)
+Date: Fri, 10 Apr 2015 15:40:28 -0500
+From: no-reply@sanki.com
+Reply-To: no-reply@sanki.com
+To: titi@yopmail.com
+Message-ID: <5528353cb9780_3a904516ce824992@snoobie-VirtualBox.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome titi@yopmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=L49aXmjS6AyThnDt9wz3">Confirm my account</a></p>
+
+  [1m[35m (15.8ms)[0m  commit transaction
+Completed 201 Created in 375ms (Views: 0.1ms | ActiveRecord: 16.4ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-04-10 15:40:34 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"titi@yopmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "titi@yopmail.com"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+Completed 400 Bad Request in 6ms (Views: 0.2ms | ActiveRecord: 0.2ms)
