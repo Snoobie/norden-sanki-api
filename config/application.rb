@@ -24,5 +24,7 @@ module Sanki
     config.autoload_paths << Rails.root.join('lib')
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.initialize_on_precompile = false
+    # Fallback to assets pipeline if a precompiled asset is missed
+    config.assets.compile = true
   end
 end
