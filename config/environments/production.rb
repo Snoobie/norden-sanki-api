@@ -8,16 +8,16 @@ Rails.application.configure do
   #  :domain  => 'sanki-api.herokuapp.com'
   #}
 
-  config.action_mailer.smtp_settings = {
-      :address        => 'smtp.sendgrid.net',
-      :port           => '587',
-      :authentication => :plain,
-      :user_name      => 'snoobie',
-      :password       => 'noobie7878',
-      :domain         => 'heroku.com',
-      :host           => 'sanki-api.herokuapp.com',
-      :enable_starttls_auto => true
-    }
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'smtp.sendgrid.net',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => 'snoobie',
+    :password       => 'noobie7878',
+    :domain         => 'heroku.com'
+  }
+  ActionMailer::Base.delivery_method = :smtp
+  config.action_mailer.default_url_options = { :host => 'sanki-api.herokuapp.com' }
 
   # Code is not reloaded between requests.
   config.cache_classes = true
