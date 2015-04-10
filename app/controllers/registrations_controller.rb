@@ -13,4 +13,15 @@ class RegistrationsController < Devise::RegistrationsController
         render :json=> user.errors, :status=>400
       end
     end
+
+    def delete
+      pattern = {id: true}
+
+      if safe_params = valid_params(pattern, params.except(:user_email, :user_token))
+          if user = valid_object(User, safe_params[:id])
+              user.delete
+              render json: {'delete' => user}, status: 200, method: :delete
+          end
+      end
+    end
 end

@@ -52,7 +52,7 @@ class DistributorsController < ApplicationController
     if safe_params = valid_params(pattern, params)
         if distributor = valid_object(Distributor, safe_params[:id])
             distributor.delete
-            render json: {'delete' => distributor, 'file' => file}, status: 200, method: :delete
+            render json: {'delete' => distributor}, status: 200, method: :delete
         end
     end
   end

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'}
   as :user do
     post '/user/sign_up', to: 'registrations#create'
+    delete '/user/delete', to: 'registrations#delete'
   end
 
   # User routes

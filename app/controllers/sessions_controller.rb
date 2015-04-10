@@ -18,7 +18,7 @@ class SessionsController < Devise::SessionsController
       if user.valid_password? password
         user.restore_authentication_token!
         # Note that the data which should be returned depends heavily of the API client needs.
-        render status: 200, json: { email: user.email, authentication_token: user.authentication_token, id: id }
+        render status: 200, json: { email: user.email, authentication_token: user.authentication_token, id: id, user: user}
       else
         render status: 401, json: { message: 'Invalid email or password.' }
       end
