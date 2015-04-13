@@ -5188,3 +5188,667 @@ Processing by SessionsController#create as */*
   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "titi@yopmail.com"]]
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
 Completed 400 Bad Request in 6ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddConfirmableToDevise (20150409204932)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (5.2ms)[0m  DROP INDEX "index_users_on_confirmation_token"
+  [1m[36m (1.3ms)[0m  [1mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime, "updated_at" datetime, "authentication_token" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "tindex_ausers_on_authentication_token" ON "ausers" ("authentication_token")
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  CREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")
+  [1m[36m (0.2ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token","confirmed_at","confirmation_sent_at") VALUES (3, 'cpsnoobie@gmail.com', '$2a$10$NYpaLELbioX.uGPTC3ehYuPyT4vj6IuhNi8hZufv9u26K4jKaNpim', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-09 22:22:12.596457', '2015-04-09 22:22:12.596457', 'xx3xYuWeBy81zyeaZjaT', '4d3fae4dc0044153ba4ec8520282ea726d511d209fa546f057f9d3ec73f22da6', NULL, '2015-04-09 22:22:12.597347')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token","confirmed_at","confirmation_sent_at") VALUES (4, 'toto@gmail.com', '$2a$10$pijKs08MxhzmMZfGLyfEfuQMnycVA1RLDstTrLZBGVV/Sb1fsnK.y', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 15:52:32.677962', '2015-04-10 15:52:32.677962', 'AFywDDbARMJgPSBqeCPs', '0fdb541e7a9e1b0e670a74f00b32b143b1263b50321f95012fe5e08f6140a79e', NULL, '2015-04-10 15:52:33.008189')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token","confirmed_at","confirmation_sent_at") VALUES (5, 'fouck@gmail.com', '$2a$10$4JLvkCXiX6G.P.CSRMkvvOCheJZChK0hW1DYIDX94MpCQblEPWdEC', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 17:50:02.216769', '2015-04-10 17:50:02.216769', 'uCQUzZrXGhCJ9kSwU7WK', 'a8f8f70cc2d07f815f83af0e37fc74f156aa685ad4e22681a59de3275ada6cb0', NULL, '2015-04-10 17:50:02.220213')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token","confirmed_at","confirmation_sent_at") VALUES (6, 'toto@yopmail.com', '$2a$10$C0xbJkvGlfjW8rsvBZpAi.krkP4oRqvX1nC9hxTEcUhbcJJceqlj6', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 20:36:54.131128', '2015-04-10 20:38:28.041501', 'jLx2bDshpJrfnts-SWuY', NULL, '2015-04-10 20:38:28.040908', '2015-04-10 20:36:54.133091')[0m
+  [1m[35m (4.5ms)[0m  INSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token","confirmed_at","confirmation_sent_at") VALUES (7, 'titi@yopmail.com', '$2a$10$tJQGLO9GC/0vb1v4zJ/Wn.wGKzbx5KYhP5Vm.0jzOsJRYd3GuNvXy', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 20:40:28.713024', '2015-04-10 20:40:28.713024', 'KmVYTx44FB9k3KwzBzwh', '81bf064b509766db16ab68ba83f2bf31db0bf2e8924e53e31e1c02f4ad560ea6', NULL, '2015-04-10 20:40:28.714043')
+  [1m[36m (9.4ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime, "updated_at" datetime, "authentication_token" varchar, "confirmation_token" varchar, "confirmed_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_authentication_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_authentication_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_users_on_authentication_token" ON "users" ("authentication_token")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "ausers"
+  [1m[36m (2.0ms)[0m  [1mINSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token","confirmed_at") VALUES (3, 'cpsnoobie@gmail.com', '$2a$10$NYpaLELbioX.uGPTC3ehYuPyT4vj6IuhNi8hZufv9u26K4jKaNpim', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-09 22:22:12.596457', '2015-04-09 22:22:12.596457', 'xx3xYuWeBy81zyeaZjaT', '4d3fae4dc0044153ba4ec8520282ea726d511d209fa546f057f9d3ec73f22da6', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token","confirmed_at") VALUES (4, 'toto@gmail.com', '$2a$10$pijKs08MxhzmMZfGLyfEfuQMnycVA1RLDstTrLZBGVV/Sb1fsnK.y', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 15:52:32.677962', '2015-04-10 15:52:32.677962', 'AFywDDbARMJgPSBqeCPs', '0fdb541e7a9e1b0e670a74f00b32b143b1263b50321f95012fe5e08f6140a79e', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token","confirmed_at") VALUES (5, 'fouck@gmail.com', '$2a$10$4JLvkCXiX6G.P.CSRMkvvOCheJZChK0hW1DYIDX94MpCQblEPWdEC', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 17:50:02.216769', '2015-04-10 17:50:02.216769', 'uCQUzZrXGhCJ9kSwU7WK', 'a8f8f70cc2d07f815f83af0e37fc74f156aa685ad4e22681a59de3275ada6cb0', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token","confirmed_at") VALUES (6, 'toto@yopmail.com', '$2a$10$C0xbJkvGlfjW8rsvBZpAi.krkP4oRqvX1nC9hxTEcUhbcJJceqlj6', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 20:36:54.131128', '2015-04-10 20:38:28.041501', 'jLx2bDshpJrfnts-SWuY', NULL, '2015-04-10 20:38:28.040908')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token","confirmed_at") VALUES (7, 'titi@yopmail.com', '$2a$10$tJQGLO9GC/0vb1v4zJ/Wn.wGKzbx5KYhP5Vm.0jzOsJRYd3GuNvXy', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 20:40:28.713024', '2015-04-10 20:40:28.713024', 'KmVYTx44FB9k3KwzBzwh', '81bf064b509766db16ab68ba83f2bf31db0bf2e8924e53e31e1c02f4ad560ea6', NULL)[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "ausers"
+  [1m[36m (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime, "updated_at" datetime, "authentication_token" varchar, "confirmation_token" varchar, "confirmed_at" datetime) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "tindex_ausers_on_authentication_token" ON "ausers" ("authentication_token")[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "users"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token","confirmed_at") VALUES (3, 'cpsnoobie@gmail.com', '$2a$10$NYpaLELbioX.uGPTC3ehYuPyT4vj6IuhNi8hZufv9u26K4jKaNpim', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-09 22:22:12.596457', '2015-04-09 22:22:12.596457', 'xx3xYuWeBy81zyeaZjaT', '4d3fae4dc0044153ba4ec8520282ea726d511d209fa546f057f9d3ec73f22da6', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token","confirmed_at") VALUES (4, 'toto@gmail.com', '$2a$10$pijKs08MxhzmMZfGLyfEfuQMnycVA1RLDstTrLZBGVV/Sb1fsnK.y', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 15:52:32.677962', '2015-04-10 15:52:32.677962', 'AFywDDbARMJgPSBqeCPs', '0fdb541e7a9e1b0e670a74f00b32b143b1263b50321f95012fe5e08f6140a79e', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token","confirmed_at") VALUES (5, 'fouck@gmail.com', '$2a$10$4JLvkCXiX6G.P.CSRMkvvOCheJZChK0hW1DYIDX94MpCQblEPWdEC', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 17:50:02.216769', '2015-04-10 17:50:02.216769', 'uCQUzZrXGhCJ9kSwU7WK', 'a8f8f70cc2d07f815f83af0e37fc74f156aa685ad4e22681a59de3275ada6cb0', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token","confirmed_at") VALUES (6, 'toto@yopmail.com', '$2a$10$C0xbJkvGlfjW8rsvBZpAi.krkP4oRqvX1nC9hxTEcUhbcJJceqlj6', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 20:36:54.131128', '2015-04-10 20:38:28.041501', 'jLx2bDshpJrfnts-SWuY', NULL, '2015-04-10 20:38:28.040908')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token","confirmed_at") VALUES (7, 'titi@yopmail.com', '$2a$10$tJQGLO9GC/0vb1v4zJ/Wn.wGKzbx5KYhP5Vm.0jzOsJRYd3GuNvXy', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 20:40:28.713024', '2015-04-10 20:40:28.713024', 'KmVYTx44FB9k3KwzBzwh', '81bf064b509766db16ab68ba83f2bf31db0bf2e8924e53e31e1c02f4ad560ea6', NULL)[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "users"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime, "updated_at" datetime, "authentication_token" varchar, "confirmation_token" varchar) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_authentication_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_authentication_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (8.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_users_on_authentication_token" ON "users" ("authentication_token")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token") VALUES (3, 'cpsnoobie@gmail.com', '$2a$10$NYpaLELbioX.uGPTC3ehYuPyT4vj6IuhNi8hZufv9u26K4jKaNpim', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-09 22:22:12.596457', '2015-04-09 22:22:12.596457', 'xx3xYuWeBy81zyeaZjaT', '4d3fae4dc0044153ba4ec8520282ea726d511d209fa546f057f9d3ec73f22da6')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token") VALUES (4, 'toto@gmail.com', '$2a$10$pijKs08MxhzmMZfGLyfEfuQMnycVA1RLDstTrLZBGVV/Sb1fsnK.y', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 15:52:32.677962', '2015-04-10 15:52:32.677962', 'AFywDDbARMJgPSBqeCPs', '0fdb541e7a9e1b0e670a74f00b32b143b1263b50321f95012fe5e08f6140a79e')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token") VALUES (5, 'fouck@gmail.com', '$2a$10$4JLvkCXiX6G.P.CSRMkvvOCheJZChK0hW1DYIDX94MpCQblEPWdEC', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 17:50:02.216769', '2015-04-10 17:50:02.216769', 'uCQUzZrXGhCJ9kSwU7WK', 'a8f8f70cc2d07f815f83af0e37fc74f156aa685ad4e22681a59de3275ada6cb0')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token") VALUES (6, 'toto@yopmail.com', '$2a$10$C0xbJkvGlfjW8rsvBZpAi.krkP4oRqvX1nC9hxTEcUhbcJJceqlj6', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 20:36:54.131128', '2015-04-10 20:38:28.041501', 'jLx2bDshpJrfnts-SWuY', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token") VALUES (7, 'titi@yopmail.com', '$2a$10$tJQGLO9GC/0vb1v4zJ/Wn.wGKzbx5KYhP5Vm.0jzOsJRYd3GuNvXy', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 20:40:28.713024', '2015-04-10 20:40:28.713024', 'KmVYTx44FB9k3KwzBzwh', '81bf064b509766db16ab68ba83f2bf31db0bf2e8924e53e31e1c02f4ad560ea6')
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime, "updated_at" datetime, "authentication_token" varchar, "confirmation_token" varchar) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "tindex_ausers_on_authentication_token" ON "ausers" ("authentication_token")
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token") VALUES (3, 'cpsnoobie@gmail.com', '$2a$10$NYpaLELbioX.uGPTC3ehYuPyT4vj6IuhNi8hZufv9u26K4jKaNpim', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-09 22:22:12.596457', '2015-04-09 22:22:12.596457', 'xx3xYuWeBy81zyeaZjaT', '4d3fae4dc0044153ba4ec8520282ea726d511d209fa546f057f9d3ec73f22da6')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token") VALUES (4, 'toto@gmail.com', '$2a$10$pijKs08MxhzmMZfGLyfEfuQMnycVA1RLDstTrLZBGVV/Sb1fsnK.y', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 15:52:32.677962', '2015-04-10 15:52:32.677962', 'AFywDDbARMJgPSBqeCPs', '0fdb541e7a9e1b0e670a74f00b32b143b1263b50321f95012fe5e08f6140a79e')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token") VALUES (5, 'fouck@gmail.com', '$2a$10$4JLvkCXiX6G.P.CSRMkvvOCheJZChK0hW1DYIDX94MpCQblEPWdEC', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 17:50:02.216769', '2015-04-10 17:50:02.216769', 'uCQUzZrXGhCJ9kSwU7WK', 'a8f8f70cc2d07f815f83af0e37fc74f156aa685ad4e22681a59de3275ada6cb0')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token") VALUES (6, 'toto@yopmail.com', '$2a$10$C0xbJkvGlfjW8rsvBZpAi.krkP4oRqvX1nC9hxTEcUhbcJJceqlj6', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 20:36:54.131128', '2015-04-10 20:38:28.041501', 'jLx2bDshpJrfnts-SWuY', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token","confirmation_token") VALUES (7, 'titi@yopmail.com', '$2a$10$tJQGLO9GC/0vb1v4zJ/Wn.wGKzbx5KYhP5Vm.0jzOsJRYd3GuNvXy', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 20:40:28.713024', '2015-04-10 20:40:28.713024', 'KmVYTx44FB9k3KwzBzwh', '81bf064b509766db16ab68ba83f2bf31db0bf2e8924e53e31e1c02f4ad560ea6')
+  [1m[36m (1.4ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (1.7ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime, "updated_at" datetime, "authentication_token" varchar) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_authentication_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_authentication_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_users_on_authentication_token" ON "users" ("authentication_token")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "ausers"
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token") VALUES (3, 'cpsnoobie@gmail.com', '$2a$10$NYpaLELbioX.uGPTC3ehYuPyT4vj6IuhNi8hZufv9u26K4jKaNpim', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-09 22:22:12.596457', '2015-04-09 22:22:12.596457', 'xx3xYuWeBy81zyeaZjaT')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token") VALUES (4, 'toto@gmail.com', '$2a$10$pijKs08MxhzmMZfGLyfEfuQMnycVA1RLDstTrLZBGVV/Sb1fsnK.y', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 15:52:32.677962', '2015-04-10 15:52:32.677962', 'AFywDDbARMJgPSBqeCPs')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token") VALUES (5, 'fouck@gmail.com', '$2a$10$4JLvkCXiX6G.P.CSRMkvvOCheJZChK0hW1DYIDX94MpCQblEPWdEC', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 17:50:02.216769', '2015-04-10 17:50:02.216769', 'uCQUzZrXGhCJ9kSwU7WK')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token") VALUES (6, 'toto@yopmail.com', '$2a$10$C0xbJkvGlfjW8rsvBZpAi.krkP4oRqvX1nC9hxTEcUhbcJJceqlj6', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 20:36:54.131128', '2015-04-10 20:38:28.041501', 'jLx2bDshpJrfnts-SWuY')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","authentication_token") VALUES (7, 'titi@yopmail.com', '$2a$10$tJQGLO9GC/0vb1v4zJ/Wn.wGKzbx5KYhP5Vm.0jzOsJRYd3GuNvXy', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2015-04-10 20:40:28.713024', '2015-04-10 20:40:28.713024', 'KmVYTx44FB9k3KwzBzwh')[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "ausers"
+  [1m[36mSQL (11.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20150409204932"]]
+  [1m[35m (17.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddConfirmableToDevise (20150409204932)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (4.8ms)[0m  [1mALTER TABLE "users" ADD "confirmation_token" varchar[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "users" ADD "confirmed_at" datetime
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "confirmation_sent_at" datetime[0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")
+  [1m[36mSQL (8.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150409204932"]]
+  [1m[35m (15.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started POST "/picture/create" for 127.0.0.1 at 2015-04-13 09:36:32 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PicturesController#create as */*
+Completed 400 Bad Request in 28ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/picture/create" for 127.0.0.1 at 2015-04-13 09:37:39 -0500
+Processing by PicturesController#create as */*
+  Parameters: {"name"=>"test", "attachment"=>#<ActionDispatch::Http::UploadedFile:0xd34d174 @tempfile=#<Tempfile:/tmp/RackMultipart20150413-3021-1544d4p.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "user_id"=>"1"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.5ms)[0m  [1mINSERT INTO "pictures" ("attachment", "name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["attachment", "ray-ban.jpg"], ["name", "test"], ["user_id", 1], ["created_at", "2015-04-13 14:37:39.848528"], ["updated_at", "2015-04-13 14:37:39.848528"]]
+  [1m[35m (19.2ms)[0m  commit transaction
+Completed 201 Created in 101ms (Views: 0.6ms | ActiveRecord: 24.3ms)
+
+
+Started POST "/picture/create" for 127.0.0.1 at 2015-04-13 09:40:23 -0500
+Processing by PicturesController#create as */*
+  Parameters: {"name"=>"test", "attachment"=>#<ActionDispatch::Http::UploadedFile:0xcfb9580 @tempfile=#<Tempfile:/tmp/RackMultipart20150413-3021-2nkk3u.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "user_id"=>"1"}
+  [1m[36m (1.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pictures" ("attachment", "name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["attachment", "ray-ban.jpg"], ["name", "test"], ["user_id", 1], ["created_at", "2015-04-13 14:40:23.936882"], ["updated_at", "2015-04-13 14:40:23.936882"]]
+  [1m[36m (10.4ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 15.2ms)
+
+ArgumentError (Version med doesn't exist!):
+  app/controllers/pictures_controller.rb:32:in `create'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.3ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0xa065f68 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0xa065b30 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0xa03ed8c @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPaperclipToPicture (20150413144224)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (8.8ms)[0m  [1mALTER TABLE "pictures" ADD "image_file_name" varchar[0m
+  [1m[35m (0.0ms)[0m  ALTER TABLE "pictures" ADD "image_content_type" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "pictures" ADD "image_file_size" integer[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "pictures" ADD "image_updated_at" datetime
+  [1m[36mSQL (8.8ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150413144224"]]
+  [1m[35m (18.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_authentication_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started POST "/picture/create" for 127.0.0.1 at 2015-04-13 09:45:48 -0500
+  [1m[35mActiveRecord::SchemaMigration Load (15.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by PicturesController#create as */*
+  Parameters: {"name"=>"test", "attachment"=>#<ActionDispatch::Http::UploadedFile:0xbb6f084 @tempfile=#<Tempfile:/tmp/RackMultipart20150413-3021-18gkjsd.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "user_id"=>"1"}
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 5.6ms)
+
+Paperclip::Errors::MissingRequiredValidatorError (Paperclip::Errors::MissingRequiredValidatorError):
+  app/controllers/pictures_controller.rb:30:in `create'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.6ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0xa065f68 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0xa065b30 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0xa03ed8c @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/picture/create" for 127.0.0.1 at 2015-04-13 10:15:20 -0500
+Processing by PicturesController#create as */*
+  Parameters: {"name"=>"test", "attachment"=>#<ActionDispatch::Http::UploadedFile:0xbc7fc6c @tempfile=#<Tempfile:/tmp/RackMultipart20150413-3021-1qt0tcz.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "user_id"=>"1"}
+Command :: file -b --mime '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-1p5qy8b.jpg'
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-1lieebs.jpg'
+  [1m[35m (0.0ms)[0m  rollback transaction
+Completed 400 Bad Request in 188ms (Views: 0.2ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/picture/create" for 127.0.0.1 at 2015-04-13 10:19:12 -0500
+Processing by PicturesController#create as */*
+  Parameters: {"name"=>"test", "attachment"=>#<ActionDispatch::Http::UploadedFile:0xcea02ac @tempfile=#<Tempfile:/tmp/RackMultipart20150413-3021-133gvp3.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "user_id"=>"1"}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `merge' for "image/jpg":String):
+  app/models/picture.rb:5:in `<class:Picture>'
+  app/models/picture.rb:1:in `<top (required)>'
+  app/controllers/pictures_controller.rb:30:in `create'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.9ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.9ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0xa065f68 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0xa065b30 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0xa03ed8c @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/picture/create" for 127.0.0.1 at 2015-04-13 10:20:57 -0500
+Processing by PicturesController#create as */*
+  Parameters: {"name"=>"test", "attachment"=>#<ActionDispatch::Http::UploadedFile:0xad7cdf0 @tempfile=#<Tempfile:/tmp/RackMultipart20150413-3021-bjj049.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "user_id"=>"1"}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `merge' for "image/png":String):
+  app/models/picture.rb:5:in `<class:Picture>'
+  app/models/picture.rb:1:in `<top (required)>'
+  app/controllers/pictures_controller.rb:30:in `create'
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.7ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0xa065f68 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0xa065b30 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0xa03ed8c @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/picture/create" for 127.0.0.1 at 2015-04-13 10:22:44 -0500
+Processing by PicturesController#create as */*
+  Parameters: {"name"=>"test", "attachment"=>#<ActionDispatch::Http::UploadedFile:0xd431608 @tempfile=#<Tempfile:/tmp/RackMultipart20150413-3021-12exeyk.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "user_id"=>"1"}
+Command :: file -b --mime '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-2w8ekh.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-vdflz9.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-vdflz9.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-vdflz9.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-1s42wqh.jpg'
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 400 Bad Request in 107ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/picture/create" for 127.0.0.1 at 2015-04-13 10:51:04 -0500
+Processing by PicturesController#create as */*
+  Parameters: {"name"=>"test", "attachment"=>#<ActionDispatch::Http::UploadedFile:0xd262278 @tempfile=#<Tempfile:/tmp/RackMultipart20150413-3021-n7j4n0.jpg>, @original_filename="ray-ban.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"attachment\"; filename=\"ray-ban.jpg\"\r\nContent-Type: image/jpeg\r\n">, "user_id"=>"1"}
+Command :: file -b --mime '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-1dng8ri.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-1lf3wos.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-1lf3wos.jpg[0]'
+Command :: convert '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-1lf3wos.jpg[0]' -auto-orient -resize "64x64" '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-1lf3wos20150413-3021-zlceau'
+Command :: file -b --mime '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-1lf3wos20150413-3021-zlceau'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-1lf3wos.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-1lf3wos.jpg[0]'
+Command :: convert '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-1lf3wos.jpg[0]' -auto-orient -resize "100x100" '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-1lf3wos20150413-3021-1gfti7f'
+Command :: file -b --mime '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-1lf3wos20150413-3021-1gfti7f'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-1lf3wos.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-1lf3wos.jpg[0]'
+Command :: convert '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-1lf3wos.jpg[0]' -auto-orient -resize "200x200" '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-1lf3wos20150413-3021-1ikr83c'
+Command :: file -b --mime '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-1lf3wos20150413-3021-1ikr83c'
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/tmp/2091d438dc6ead1243e9d08d1658264420150413-3021-fieazt.jpg'
+  [1m[35mSQL (2.9ms)[0m  INSERT INTO "pictures" ("attachment", "name", "user_id", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["attachment", "ray-ban.jpg"], ["name", "test"], ["user_id", 1], ["image_file_name", "ray-ban.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 43563], ["image_updated_at", "2015-04-13 15:51:04.021387"], ["created_at", "2015-04-13 15:51:04.501911"], ["updated_at", "2015-04-13 15:51:04.501911"]]
+  [1m[36m (5.1ms)[0m  [1mcommit transaction[0m
+Completed 201 Created in 511ms (Views: 0.1ms | ActiveRecord: 8.1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-04-13 12:02:08 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"titi@yopmail.com", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (3.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "titi@yopmail.com"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+Completed 400 Bad Request in 110ms (Views: 0.3ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-04-13 12:02:15 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"titi@yopmail.com", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "titi@yopmail.com"]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+Completed 400 Bad Request in 6ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-04-13 12:22:14 -0500
+Processing by SessionsController#new as HTML
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (41.5ms)
+Completed 200 OK in 1983ms (Views: 1978.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-04-13 12:22:17 -0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-04-13 12:22:17 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-04-13 12:22:17 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-04-13 12:22:17 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-04-13 12:22:17 -0500

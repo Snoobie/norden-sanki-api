@@ -27,13 +27,13 @@ class PicturesController < ApplicationController
   def create
     pattern = {attachment: true, name: true, user_id: true, description: false}
     if safe_params = valid_params(pattern, params)
-      picture = Picture.new(:attachment => params[:attachment], :name => params[:name], :user_id => params[:user_id], :description => params[:description])
-      if picture.save
-        render :json=> picture, :status=>201
+      @picture = Picture.new(:attachment => params[:attachment], :name => params[:name], :user_id => params[:user_id], :description => params[:description], :image => params[:attachment])
+      if @picture.save
+        render :json=> @picture.image.url(:med), :status=>201
         return
       else
         warden.custom_failure!
-        render :json=> picture.errors, :status=>400
+        render :json=> @picture.errors, :status=>400
       end
     end
   end
