@@ -4,11 +4,13 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'}
   as :user do
     post '/user/sign_up', to: 'registrations#create'
-    delete '/user/delete', to: 'registrations#delete'
+    get '/user/resend_confirmation', to: 'registrations#resend_confirmation'
   end
 
   # User routes
   get '/user', to: 'users#show'
+  delete '/user/delete', to: 'users#delete'
+  # match 'users/:id' => 'users#delete', :via => :delete, :as => :admin_destroy_user
 
   # Picture routes
   get '/picture/all', to: 'pictures#index'
@@ -43,6 +45,7 @@ Rails.application.routes.draw do
   get '/distributor', to: 'distributors#show'
   post '/distributor/create', to: 'distributors#create'
   put '/distributor/update', to: 'distributors#update'
+  put '/distributor/update_excel', to: 'distributors#update_excel'
   delete '/distributor/delete', to: 'distributors#delete'
 
   # Challenge routes

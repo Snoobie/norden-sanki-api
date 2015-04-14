@@ -14,13 +14,17 @@ class RegistrationsController < Devise::RegistrationsController
       end
     end
 
-    def delete
-      pattern = {id: true}
+    def resend_confirmation
+      pattern = {user_email:true}
 
-      if safe_params = valid_params(pattern, params.except(:user_email, :user_token))
-          if user = valid_object(User, safe_params[:id])
-              user.delete
-              render json: {'delete' => user}, status: 200, method: :delete
+      if safe_params = valid_params(pattern, params)
+          if user = User.where(:email => safe_params[:user_email]).first
+            response = user.resend_confirmation_instructions
+            if response
+              render json: {'success' => 'Confirmation email resend with a new token'}, status: => 201, method: :get
+            else
+              render json: {'error' => 'Confirmation email could not be send'}, status: => 400, method: :get
+            end
           end
       end
     end

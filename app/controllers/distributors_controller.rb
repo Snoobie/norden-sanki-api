@@ -44,6 +44,26 @@ class DistributorsController < ApplicationController
     end
   end
 
+  # Update an distributor by excel documento
+  # PUT /distributor/update_excel
+  def update_excel
+    pattern = {user_email:true, user_token:true, file: true}
+
+    if safe_params = valid_params(pattern, params)
+        # If excel file is already present
+        if @excel_file = valid_object(ExcelFile, 1)
+          if updated = valid_request(@excel_file, safe_params.except(:user_email, :user_token))
+            file = Roo::Excel.new(@excel_file.file.path)
+            render json: file.row(12)[0], status: 200, method: :put
+            return
+          end
+        elsif excel_file = valid_request(ExcelFile.new, safe_params.except(:user_email, :user_token))
+          #Do something
+          return
+        end
+    end
+  end
+
   # Delete an distributor
   # DELETE /distributor/delete
   def delete

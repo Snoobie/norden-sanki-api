@@ -11,7 +11,10 @@ class SessionsController < Devise::SessionsController
       return
     end
 
-    if !User.find(id).confirmed?
+    if !id
+      render status: 400, json: { message: 'This user does not exists' }
+      return
+    elsif !User.find(id).confirmed?
       render status: 400, json: { message: 'You need to verify your email' }
       return
     end
@@ -21,7 +24,7 @@ class SessionsController < Devise::SessionsController
       if user.valid_password? password
         user.restore_authentication_token!
         # Note that the data which should be returned depends heavily of the API client needs.
-        render status: 200, json: { email: user.email, authentication_token: user.authentication_token, id: id, user: user}
+        render status: 200, json: { email: user.email, authentication_token: user.authentication_token, id: id}
       else
         render status: 401, json: { message: 'Invalid email or password.' }
       end
