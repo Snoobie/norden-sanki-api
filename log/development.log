@@ -10019,3 +10019,51 @@ Migrating to AddFieldIsAdminToUsers (20150414145342)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 [0m
+
+
+Started POST "/user/sign_up" for 127.0.0.1 at 2015-04-17 15:41:01 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+SyntaxError (/home/snoobie/projet/norden-sanki-api/app/controllers/registrations_controller.rb:24: syntax error, unexpected =>
+... with a new token'}, status: => 201, method: :get
+...                               ^
+/home/snoobie/projet/norden-sanki-api/app/controllers/registrations_controller.rb:26: syntax error, unexpected =>
+...could not be send'}, status: => 400, method: :get
+...                               ^):
+  app/controllers/registrations_controller.rb:24: syntax error, unexpected =>
+  app/controllers/registrations_controller.rb:26: syntax error, unexpected =>
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.2ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.9ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.5ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x95a6398 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x95a5e5c @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x95a2554 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/user/sign_up" for 127.0.0.1 at 2015-04-17 15:42:31 -0500
+
+SyntaxError (/home/snoobie/projet/norden-sanki-api/app/controllers/registrations_controller.rb:24: syntax error, unexpected =>
+... with a new token'}, status: => 201, method: :get
+...                               ^
+/home/snoobie/projet/norden-sanki-api/app/controllers/registrations_controller.rb:26: syntax error, unexpected =>
+...could not be send'}, status: => 400, method: :get
+...                               ^):
+  app/controllers/registrations_controller.rb:24: syntax error, unexpected =>
+  app/controllers/registrations_controller.rb:26: syntax error, unexpected =>
+
+
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.2ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/snoobie/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.9ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x95a6398 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x95a5e5c @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x95a2554 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/user/sign_up" for 127.0.0.1 at 2015-04-17 15:56:47 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"email"=>"toto@yopmail.com", "password"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'toto@yopmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 400 Bad Request in 305ms (Views: 0.2ms | ActiveRecord: 1.1ms)

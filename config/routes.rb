@@ -4,12 +4,12 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'}
   as :user do
     post '/user/sign_up', to: 'registrations#create'
-    get '/user/resend_confirmation', to: 'registrations#resend_confirmation'
   end
 
   # User routes
   get '/user', to: 'users#show'
   delete '/user/delete', to: 'users#delete'
+  get '/user/resend_confirmation', to: 'registrations#resend_confirmation'
   # match 'users/:id' => 'users#delete', :via => :delete, :as => :admin_destroy_user
 
   # Picture routes
